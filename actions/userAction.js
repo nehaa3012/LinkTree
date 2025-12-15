@@ -22,6 +22,7 @@ export async function createLink({ title, url }) {
                 }
             }
         })
+        revalidatePath('/CreateForm');
         return link;
     } catch (error) {
         console.log(error);

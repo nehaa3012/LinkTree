@@ -33,7 +33,7 @@ export default async function Home() {
                 </SignInButton>
               </SignInButton>
               <SignUpButton mode="modal">
-                <button className="bg-primary text-black font-semibold px-6 py-2.5 rounded-full hover:shadow-lg hover:-translate-y-0.5 transition-all active:translate-y-0 active:shadow-md">
+                <button className="bg-primary text-white font-semibold px-6 py-2.5 rounded-full hover:shadow-lg hover:-translate-y-0.5 transition-all active:translate-y-0 active:shadow-md">
                   Sign up
                 </button>
               </SignUpButton>
