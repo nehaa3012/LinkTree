@@ -64,10 +64,10 @@ export default async function Home() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
             <Link href="/CreateForm">
-            <button className="bg-primary text-white text-lg font-bold px-10 py-4 rounded-full shadow-xl shadow-primary/20 hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 transition-all active:translate-y-0 w-full sm:w-auto flex items-center justify-center gap-2 group">
-              <Coffee className="size-5 group-hover:rotate-12 transition-transform" />
-              Start my page
-            </button>
+              <button className="bg-primary text-white text-lg font-bold px-10 py-4 rounded-full shadow-xl shadow-primary/20 hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 transition-all active:translate-y-0 w-full sm:w-auto flex items-center justify-center gap-2 group">
+                <Coffee className="size-5 group-hover:rotate-12 transition-transform" />
+                Start my page
+              </button>
             </Link>
             <button className="bg-white border-2 border-border text-foreground text-lg font-bold px-10 py-3.5 rounded-full hover:border-gray-300 hover:bg-gray-50 transition-all w-full sm:w-auto">
               It's free

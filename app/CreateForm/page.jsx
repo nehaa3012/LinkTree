@@ -3,6 +3,8 @@ import AddLink from '@/components/addLink'
 import ShowLink from '@/components/showLink'
 import { Separator } from "@/components/ui/separator"
 
+export const dynamic = 'force-dynamic'
+
 async function CreateForm() {
     return (
         <div className="min-h-screen w-full px-4 py-12 md:py-24 bg-gradient-to-b from-background to-muted/20">
