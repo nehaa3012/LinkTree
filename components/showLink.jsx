@@ -2,8 +2,9 @@ import React from 'react'
 import { getLinks } from '@/actions/userAction'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { ExternalLink, Link as LinkIcon } from 'lucide-react'
+import { ExternalLink, Link as LinkIcon, Trash2 } from 'lucide-react'
 import Link from 'next/link'
+import { deleteLink } from '@/actions/userAction'
 
 async function ShowLink() {
     const links = await getLinks()
@@ -33,12 +34,18 @@ async function ShowLink() {
                         <p className="text-sm text-muted-foreground truncate mb-4 pl-[44px]">
                             {link.url}
                         </p>
-                        <div className="pl-[44px]">
-                            <Button asChild variant="outline" size="sm" className="w-full group-hover:bg-purple-50 dark:group-hover:bg-purple-900/20 group-hover:border-purple-200 transition-colors">
+                        <div className="pl-[44px] flex gap-2">
+                            <Button asChild variant="outline" size="sm" className="flex-1 group-hover:bg-purple-50 dark:group-hover:bg-purple-900/20 group-hover:border-purple-200 transition-colors">
                                 <Link href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                                     Visit Link <ExternalLink className="h-3 w-3" />
                                 </Link>
                             </Button>
+                            <form action={deleteLink}>
+                                <input type="hidden" name="id" value={link.id} />
+                                <Button type="submit" variant="destructive" size="sm" className="p-2">
+                                    <Trash2 className="h-4 w-4" />
+                                </Button>
+                            </form>
                         </div>
                     </CardContent>
                 </Card>
