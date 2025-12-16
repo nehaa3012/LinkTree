@@ -3,12 +3,13 @@ import { ArrowRight, Star, Heart, Coffee } from "lucide-react";
 import { currentUser } from "@clerk/nextjs/server";
 import { SignInButton, SignUpButton, UserButton } from "@clerk/nextjs"; // Import SignInButton and SignUpButton
 import Link from "next/link"; // Import Link for internal navigation
-
+import { Button } from "@/components/ui/button";
+import UserSearch from "@/components/UserSearch";
 
 export default async function Home() {
   await syncUser();
   const user = await currentUser();
-  console.log(user)
+  console.log(user);
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-primary-foreground">
@@ -23,7 +24,12 @@ export default async function Home() {
         <div className="flex items-center gap-4">
           {user ? (
             // If user is logged in, show a dashboard button
-            <UserButton />
+            <>
+              <Link href="/my-profile">
+                <Button variant="ghost">My Profile</Button>
+              </Link>
+              <UserButton />
+            </>
           ) : (
             // If user is not logged in, show Sign In and Sign Up buttons
             <>
@@ -61,6 +67,10 @@ export default async function Home() {
             Accept donations. Start a membership. Sell anything. It’s easier
             than you think.
           </p>
+
+          <div className="flex justify-center w-full">
+            <UserSearch />
+          </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
             <Link href="/CreateForm">
